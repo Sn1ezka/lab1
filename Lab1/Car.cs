@@ -4,6 +4,7 @@ namespace Lab1
 {
     public class Car
     {
+        public int Mileage { get; set; }
         public string Brand { get; set; }
         public string MadeInCoutry { get; set; }
         public DateTime ReleaseDate { get; set; }
@@ -21,10 +22,15 @@ namespace Lab1
             DateActual = $"Дата показа данных:{DateTime.Today}";
         }
 
-        public Car(string Brand, string MadeInCoutry, DateTime ReleaseDate, int MaximumAcceleration, int FuelForOneHundredKm, int HoldingCapacity)
+        public Car(string brand, string madeInCoutry, DateTime releaseDate, int maximumAcceleration, int fuelForOneHundredKm, int holdingCapacity) : this()
         {
             Console.WriteLine("Call constructor with params");
-            new Car(){Brand = Brand, MadeInCoutry = MadeInCoutry, ReleaseDate = ReleaseDate, MaximumAcceleration=MaximumAcceleration, FuelForOneHundredKm = FuelForOneHundredKm, HoldingCapacity = HoldingCapacity};
+            Brand = brand;
+            MadeInCoutry = madeInCoutry;
+            ReleaseDate = releaseDate;
+            MaximumAcceleration = maximumAcceleration;
+            FuelForOneHundredKm = fuelForOneHundredKm;
+            HoldingCapacity = holdingCapacity;
         }
 
         public Car(Car car)
