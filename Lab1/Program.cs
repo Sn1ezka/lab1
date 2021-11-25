@@ -13,10 +13,17 @@ namespace Lab1
            switch (oper)
            {
                 case "1":
+                    var car = new Car(1000,"Audi","Germany", DateTime.Now, 250, 8, 4){};
+                    Operations.CheckNameOfBrand(car, "Audi");
                     break;
                 case "2":
+                    var car1 = new Car(1000,"Audi","Germany", DateTime.Now, 250, 8, 4){};
+                    var car2 = new Car(car1){Mileage = 100000, Brand = "Suzuki", MadeInCoutry = "Japan"};
+                    Operations.ComparsionByMileage(car1,car2);
                     break;
                 case "3":
+                    var carPrepareToAddMileage = new Car(1000,"Audi","Germany", DateTime.Now, 250, 8, 4){};
+                    Operations.AddingMileage(carPrepareToAddMileage, 222);
                     break;
                 case "default":
                     Console.WriteLine("lab1");
@@ -32,9 +39,10 @@ namespace Lab1
 
         static void DefaultExampleWithTwoCars()
         {
-            var firstCar = new Car("Запорожец","Ukraine", DateTime.Now, 100, 7, 4){};
+            var firstCar = new Car(10000,"Запорожец","Ukraine", DateTime.Now, 100, 7, 4){};
         
             var secondCar = new Car(firstCar){
+                    Mileage = 55000,
                     Brand = "Жигуль", 
                     MaximumAcceleration = 120, 
                     FuelForOneHundredKm = 10, 

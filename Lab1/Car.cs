@@ -22,9 +22,10 @@ namespace Lab1
             DateActual = $"Дата показа данных:{DateTime.Today}";
         }
 
-        public Car(string brand, string madeInCoutry, DateTime releaseDate, int maximumAcceleration, int fuelForOneHundredKm, int holdingCapacity) : this()
+        public Car(int mileage, string brand, string madeInCoutry, DateTime releaseDate, int maximumAcceleration, int fuelForOneHundredKm, int holdingCapacity) : this()
         {
             Console.WriteLine("Call constructor with params");
+            Mileage = mileage;
             Brand = brand;
             MadeInCoutry = madeInCoutry;
             ReleaseDate = releaseDate;
@@ -36,6 +37,7 @@ namespace Lab1
         public Car(Car car)
         {
           Console.WriteLine("Call copy constructor");
+          Mileage = car.Mileage;
           Brand = car.Brand;
           MadeInCoutry = car.MadeInCoutry;
           ReleaseDate = car.ReleaseDate;
